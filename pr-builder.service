@@ -1,0 +1,27 @@
+[Unit]
+Description=Project-R Build Orchestration Service
+Documentation=https://github.com/willzmkv/pr-builder
+After=network.target
+Wants=pr-mediad.service
+After=pr-mediad.service
+
+[Service]
+Type=simple
+# "+" runs these as root: User=arcade cannot create/chown dirs under /run.
+ExecStartPre=+/usr/bin/mkdir -p /run/project-r
+ExecStartPre=+/usr/bin/chown arcade:arcade /run/project-r
+ExecStart=/usr/bin/pr-builder
+Restart=on-failure
+RestartSec=5
+User=arcade
+Environment=HOME=/home/arcade
+# IPC endpoints (defaults shown; must match pr-maestro / pr-meta units)
+Environment=PR_BUILDER_SOCKET=/run/project-r/pr-builder.sock
+Environment=MAESTRO_SOCK_PATH=/run/project-r/maestro.sock
+Environment=PR_META_SOCKET=/run/pr-meta.sock
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pr-builder
+
+[Install]
+WantedBy=multi-user.target
