@@ -1,5 +1,6 @@
 # tests/conftest.py
 import json
+import tempfile
 import pytest
 from pathlib import Path
 
@@ -59,3 +60,11 @@ def emu_forks_path(tmp_path: Path) -> Path:
     p = tmp_path / "emu_forks_registry.json"
     p.write_text(json.dumps(SAMPLE_EMU_FORKS_REGISTRY))
     return p
+
+
+@pytest.fixture()
+def sock_dir():
+    """Short temp dir for Unix sockets (pytest's tmp_path can exceed the
+    108-byte sun_path limit)."""
+    with tempfile.TemporaryDirectory(prefix="prb-") as d:
+        yield Path(d)
