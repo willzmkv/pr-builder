@@ -1,0 +1,24 @@
+{
+  "shadps4": {
+    "CUSA00562": {
+      "title": "Bloodborne",
+      "fork_repo": "https://github.com/somedev/shadps4-bloodborne.git",
+      "fork_reason": "game-specific patches: stable 60fps, crash fixes in Yahar'gul",
+      "stability": "stable"
+    },
+    "CUSA07820": {
+      "title": "God of War",
+      "fork_repo": "https://github.com/otherdev/shadps4-gow.git",
+      "fork_reason": "shader compilation fixes and performance improvements",
+      "stability": "experimental"
+    }
+  },
+  "kytyps5": {
+    "PPSA01284": {
+      "title": "Demon's Souls Remake",
+      "fork_repo": "https://github.com/somedev/kyty-demons-souls.git",
+      "fork_reason": "translation layer patches for DeS-specific GPU command sequences",
+      "stability": "experimental"
+    }
+  }
+}

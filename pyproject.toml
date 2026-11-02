@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pr-builder"
+version = "0.1.0"
+description = "Project-R build orchestration service"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-asyncio>=0.23",
+]
+
+[project.scripts]
+pr-builder = "pr_builder.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pr_builder"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.hatch.envs.default]
+dependencies = [
+    "pytest>=7",
+    "pytest-asyncio>=0.23",
+]

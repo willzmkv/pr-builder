@@ -1,0 +1,28 @@
+{
+  "games": {
+    "20b854b239203baf6c8a71a3e7a166cd": {
+      "id": "sm64-us",
+      "name": "Super Mario 64 (US)",
+      "platform": "n64",
+      "repo": "https://github.com/sm64pc/sm64ex.git",
+      "build_type": "make",
+      "build_args": ["VERSION=us", "-j4"],
+      "asset_extractor": "extract_assets.py",
+      "install_binary": "build/us_pc/sm64.us.f3dex2e",
+      "deps": ["python", "python-pip", "audiofile", "sdl2", "glew", "gcc"],
+      "retroarch_fallback": "mupen64plus_next"
+    },
+    "cd19480a5d2b2f7f3e9b0f7f8d2a9f9f": {
+      "id": "oot-us",
+      "name": "The Legend of Zelda: Ocarina of Time (US 1.0)",
+      "platform": "n64",
+      "repo": "https://github.com/HackerN64/Zelda64Recomp.git",
+      "build_type": "cmake",
+      "build_args": ["-DCMAKE_BUILD_TYPE=Release"],
+      "asset_extractor": null,
+      "install_binary": "build/Zelda64Recomp",
+      "deps": ["cmake", "sdl2", "libpng", "zlib", "gcc", "ninja"],
+      "retroarch_fallback": "mupen64plus_next"
+    }
+  }
+}
