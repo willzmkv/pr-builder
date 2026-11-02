@@ -71,7 +71,7 @@ first occurrence); paths resolving outside the project's source dir are refused.
 
 ### Outbound — pr-builder → pr-meta (owned by pr-meta)
 
-- Socket: `/run/pr-meta.sock` (env `PR_META_SOCKET`)
+- Socket: `/run/project-r/pr-meta.sock` (env `PR_META_SOCKET`)
 - Framing: **one JSON object per connection**, then close. No reply. Best-effort: pr-builder keeps going if pr-meta is down.
 
 Build progress (sent when the percentage changes):
@@ -96,7 +96,7 @@ pr-builder            # or: python -m pr_builder.server
 |---|---|
 | `PR_BUILDER_SOCKET` | `/run/project-r/pr-builder.sock` |
 | `MAESTRO_SOCK_PATH` | `/run/project-r/maestro.sock` |
-| `PR_META_SOCKET` | `/run/pr-meta.sock` |
+| `PR_META_SOCKET` | `/run/project-r/pr-meta.sock` |
 | `PR_GAMES_ROOT` | `~/games` |
 | `PR_BUILDER_DECOMP_REGISTRY` | `<repo>/decomp_registry.json` |
 | `PR_BUILDER_EMU_FORKS_REGISTRY` | `<repo>/emu_forks_registry.json` |

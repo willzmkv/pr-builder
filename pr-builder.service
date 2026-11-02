@@ -18,7 +18,7 @@ Environment=HOME=/home/arcade
 # IPC endpoints (defaults shown; must match pr-maestro / pr-meta units)
 Environment=PR_BUILDER_SOCKET=/run/project-r/pr-builder.sock
 Environment=MAESTRO_SOCK_PATH=/run/project-r/maestro.sock
-Environment=PR_META_SOCKET=/run/pr-meta.sock
+Environment=PR_META_SOCKET=/run/project-r/pr-meta.sock
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=pr-builder

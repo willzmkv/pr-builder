@@ -2,7 +2,7 @@
 """Outbound notifications to pr-meta.
 
 The wire contract is owned by pr-meta (see its plan, Task 9): pr-meta
-listens on /run/pr-meta.sock (env PR_META_SOCKET); each connection
+listens on /run/project-r/pr-meta.sock (env PR_META_SOCKET); each connection
 carries exactly one JSON object and is then closed. No response is sent.
 
   {"event": "game_installed", "platform", "title", "rom_hash",
@@ -27,7 +27,7 @@ from typing import Any, Optional
 
 log = logging.getLogger("pr-builder.meta")
 
-PR_META_SOCK = "/run/pr-meta.sock"
+PR_META_SOCK = "/run/project-r/pr-meta.sock"
 PR_META_SOCK_ENV = "PR_META_SOCKET"
 
 

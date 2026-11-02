@@ -32,7 +32,7 @@ async def _wait_for(received: list, n: int) -> None:
 
 
 def test_default_socket_path_matches_pr_meta():
-    assert PR_META_SOCK == "/run/pr-meta.sock"
+    assert PR_META_SOCK == "/run/project-r/pr-meta.sock"
 
 
 async def test_notify_game_installed_shape(sock_dir: Path):
